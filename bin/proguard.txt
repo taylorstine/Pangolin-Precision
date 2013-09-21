@@ -1,3 +1,6 @@
-# view AndroidManifest.xml #generated:7
--keep class com.tstine.pagolinprecision.MainCategoriesActivity { <init>(...); }
+# view AndroidManifest.xml #generated:13
+-keep class com.tstine.pangolinprecision.MainCategoriesActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:20
+-keep class com.tstine.pangolinprecision.SubcategoryActivity { <init>(...); }
 

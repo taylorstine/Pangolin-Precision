@@ -1,19 +1,19 @@
-package com.tstine.pagolinprecision;
+package com.tstine.pangolinprecision;
+
+import java.io.IOException;
+
+import org.json.JSONObject;
+import org.json.JSONException;
+
+import java.net.URI;
+import org.apache.http.util.EntityUtils;
+import org.apache.http.ParseException;
+import org.apache.http.conn.BasicManagedEntity;
 
 
 public class JSONParser{
 	public static JSONObject parse( URI ... uris ){
-		DefaultHttpClient cleitn = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet( uris[0] );
-		BasicHttpResponse response = null;
-		try{
-			response = (BasicHttpResponse) client.execute( httpGet );
-		}catch( ClientProtocolException e ){
-			e.printStackTrace();
-		}catch ( IOException e ){
-			e.printStackTrace();
-		}
-		BasicManagedEntity ent = (BasicManagedEntity) response.getEntity();
+		BasicManagedEntity ent = HttpGetter.get( uris[0] );
 		String jsonText = "";
 		try{
 			jsonText = EntityUtils.toString( ent );
@@ -28,7 +28,6 @@ public class JSONParser{
 		}catch( JSONException e ){
 			e.printStackTrace();
 		}
-
 		return jsonObj;
 	}
 }
