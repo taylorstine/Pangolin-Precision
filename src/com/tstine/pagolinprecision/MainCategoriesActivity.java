@@ -30,7 +30,6 @@ import android.view.View;
 
 public class MainCategoriesActivity extends ListActivity
 {
-	public static final String HOST = "https://emsapi.bbhosted.com";
 	@Override
 	public void onCreate(Bundle ringtail )
 	{
@@ -38,7 +37,7 @@ public class MainCategoriesActivity extends ListActivity
 		if(!testConnection( this )){
 			//explosion here
 		}
-		ArrayList<Category> cats = getCategories( HOST );
+		ArrayList<Category> cats = getCategories( Const.HOST );
 		ArrayAdapter<Category> adapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1,
 																																cats );
 		setListAdapter( adapter );
@@ -49,7 +48,7 @@ public class MainCategoriesActivity extends ListActivity
 	protected void onListItemClick( ListView l, View v, int position, long id ){
 		Category item = (Category) getListAdapter().getItem(position );
 		Intent intent = new Intent( v.getContext(), SubcategoryActivity.class );
-		intent.setData( Uri.parse( HOST + "/categories/" + item.getId() ) );
+		intent.setData( Uri.parse( Const.HOST + "/categories/" + item.getId() ) );
 		startActivity( intent );
 	}
 

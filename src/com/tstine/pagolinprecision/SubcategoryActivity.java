@@ -22,15 +22,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.message.BasicHttpResponse;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.entity.BasicHttpEntity;
-import org.apache.http.util.EntityUtils;
-import org.apache.http.ParseException;
-import org.apache.http.conn.BasicManagedEntity;
-
 import org.json.JSONObject;
 import org.json.JSONException;
 import org.json.JSONArray;
@@ -54,6 +45,16 @@ public class SubcategoryActivity extends Activity {
 		ArrayList<Subcategory> subCats = getSubcategories( uri );
 		GridView subGrid = (GridView) findViewById( R.id.grid );
 		subGrid.setAdapter( new ImgAdapter( this, subCats ) );
+		subGrid.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+				@Override
+				public void onItemClick( AdapterView<?> parent, View v,
+																 int position, long id ){
+					Subcategory selected = (Subcategory) parent.getItemAtPosition( position );
+					Intent intent = new Intent( v.getContext(), ProductsActivity.class );
+					intent.setData( Uri.parse( Const.HOST + selected.getHref() ) );
+					startActivity( intent );
+				}
+			});
 	}
 
 	
@@ -62,6 +63,7 @@ public class SubcategoryActivity extends Activity {
 		JSONObject jobj = null;
 		try{
 			jobj = JSONParser.parse(new URI(uri.toString()));
+			//Log.d( Const.APP_TAG, "Subcat output:\n" + jobj.toString(2) );
 		}catch( URISyntaxException e){
 			e.printStackTrace();
 		}
@@ -72,18 +74,20 @@ public class SubcategoryActivity extends Activity {
 				String subCatTitle = subCatJobj.getString("title");
 				String subCatId = subCatJobj.getString("id");
 				String subHref = subCatJobj.getString("href");
-				JSONObject imgArray = (JSONObject) subCatJobj.get("_bb_image");
-				String imgSrc = imgArray.getString("src");
-				String imgAlt = imgArray.getString("alt");
+				JSONObject imgJson = (JSONObject) subCatJobj.get("_bb_image");
+				//Log.d(Const.APP_TAG, imgJson.toString(2) );
+				String imgSrc = imgJson.getString("src");
+				String imgAlt = imgJson.getString("alt");
 				Image img = new Image( imgSrc, imgAlt );
 				Subcategory subCat = new Subcategory(  subCatTitle, subCatId, subHref, img );
-				Log.d(Const.APP_TAG, subCat.toString() );
+				Log.d(Const.APP_TAG, subCat.getTitle() + " " + subCat.getId() + " " + subCat.getHref() );
 				subCategories.add( subCat );
 			}
 		}
 		catch( JSONException e){
 			e.printStackTrace();
 		}
+		Log.d(Const.APP_TAG, "subcat size: " + subCategories.size() );
 		return subCategories;
 	}
 }

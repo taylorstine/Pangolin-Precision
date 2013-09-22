@@ -19,5 +19,7 @@
         </activity>
         <activity android:name="SubcategoryActivity">
         </activity>
+        <activity android:name="ProductsActivity">
+        </activity>
     </application>
 </manifest>

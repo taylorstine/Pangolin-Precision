@@ -14,6 +14,11 @@ public class Image{
 		mDescription = description;
 	}
 
+	public Image( String src ){
+		mSrc = src;
+		mDescription = null;
+	}
+
 	public String toString(){
 		StringBuffer sb = new StringBuffer();
 		sb.append("src: ");

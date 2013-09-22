@@ -13,6 +13,7 @@ public class Subcategory extends Gridable{
 		mHref = href;
 	}
 
+	public String toString(){return getTitle();}
 	public String getTitle(){return super.getCaption();}
 	public String getId(){return mId;}
 	public String getHref(){return mHref;}

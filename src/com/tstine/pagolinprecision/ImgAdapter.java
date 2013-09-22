@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 
+import android.util.Log;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -30,7 +32,8 @@ public class ImgAdapter extends BaseAdapter{
 			.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
 		View gridItemView;
 		Gridable gridItem = mGridItems.get(position);
-		if( convertView == null ){
+		Log.d( Const.APP_TAG, "position: " + position + " Grid item: " + gridItem.getCaption() );
+		//		if( convertView == null ){
 			gridItemView = inflater.inflate( R.layout.grid_item, null );
 			TextView infoTV = (TextView) gridItemView.findViewById( R.id.item_text );
 			infoTV.setText( gridItem.getCaption() );
@@ -39,15 +42,15 @@ public class ImgAdapter extends BaseAdapter{
 				img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
 			}catch( URISyntaxException e ){
 				e.printStackTrace();
-			}
-		}else{
-			gridItemView = convertView;
-		}
+			 }
+			//		}else{
+			//gridItemView = convertView;
+			//}
 		return gridItemView;
 	}
 
 	@Override
-	public Category getItem( int position ){return null;}
+	public Object getItem( int position ){return mGridItems.get(position);}
 
 	@Override
 	public int getCount(){return mGridItems.size();}
