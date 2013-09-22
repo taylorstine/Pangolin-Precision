@@ -1,112 +1,139 @@
 --------- beginning of /dev/log/system
 I/ActivityManager(  448): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.tstine.pangolinprecision/.MainCategoriesActivity bnds=[400,595][528,723]} from pid 777
-I/ActivityManager(  448): Start proc com.tstine.pangolinprecision for activity com.tstine.pangolinprecision/.MainCategoriesActivity: pid=31688 uid=10117 gids={50117, 3003, 1015, 1028}
 --------- beginning of /dev/log/main
-D/dalvikvm(31688): Late-enabling CheckJNI
-D/PangolinPrecision(31688): Type: WIFI
-D/PangolinPrecision(31688): Subtype: 
-D/PangolinPrecision(31688): Extra: "SantaFe"
-D/dalvikvm(31688): GC_CONCURRENT freed 246K, 6% free 7419K/7812K, paused 3ms+2ms, total 23ms
-D/PangolinPrecision(31688): text length: 1003
-D/dalvikvm(31688): GC_FOR_ALLOC freed 52K, 5% free 7435K/7812K, paused 17ms, total 17ms
-I/dalvikvm-heap(31688): Grow heap (frag case) to 8.400MB for 1048592-byte allocation
-D/dalvikvm(31688): GC_FOR_ALLOC freed <1K, 5% free 8459K/8840K, paused 15ms, total 15ms
-D/dalvikvm(31688): GC_CONCURRENT freed 56K, 5% free 8486K/8924K, paused 2ms+2ms, total 15ms
-D/dalvikvm(31688): WAIT_FOR_CONCURRENT_GC blocked 7ms
-I/dalvikvm-heap(31688): Grow heap (frag case) to 9.033MB for 635812-byte allocation
-D/dalvikvm(31688): GC_FOR_ALLOC freed 26K, 5% free 9080K/9548K, paused 13ms, total 13ms
-D/dalvikvm(31688): GC_CONCURRENT freed 1K, 5% free 9360K/9824K, paused 3ms+3ms, total 17ms
+D/dalvikvm(32394): Late-enabling CheckJNI
+I/ActivityManager(  448): Start proc com.tstine.pangolinprecision for activity com.tstine.pangolinprecision/.MainCategoriesActivity: pid=32394 uid=10117 gids={50117, 3003, 1015, 1028}
+D/PangolinPrecision(32394): Type: WIFI
+D/PangolinPrecision(32394): Subtype: 
+D/PangolinPrecision(32394): Extra: "SantaFe"
+D/dalvikvm(32394): GC_CONCURRENT freed 271K, 6% free 7418K/7836K, paused 3ms+3ms, total 30ms
+D/PangolinPrecision(32394): text length: 1003
+D/dalvikvm(32394): GC_FOR_ALLOC freed 52K, 6% free 7435K/7836K, paused 13ms, total 13ms
+I/dalvikvm-heap(32394): Grow heap (frag case) to 8.400MB for 1048592-byte allocation
+D/dalvikvm(32394): GC_FOR_ALLOC freed <1K, 5% free 8459K/8864K, paused 17ms, total 17ms
+D/dalvikvm(32394): GC_CONCURRENT freed 56K, 5% free 8486K/8920K, paused 3ms+2ms, total 16ms
+D/dalvikvm(32394): WAIT_FOR_CONCURRENT_GC blocked 8ms
+I/dalvikvm-heap(32394): Grow heap (frag case) to 9.033MB for 635812-byte allocation
+D/dalvikvm(32394): GC_FOR_ALLOC freed 27K, 5% free 9080K/9544K, paused 12ms, total 12ms
+D/dalvikvm(32394): GC_CONCURRENT freed 12K, 5% free 9376K/9820K, paused 2ms+1ms, total 16ms
 V/PhoneStatusBar(  578): setLightsOn(true)
-I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.MainCategoriesActivity: +559ms (total +8s61ms)
-I/ActivityManager(  448): START u0 {dat=https://emsapi.bbhosted.com/categories/3677318 cmp=com.tstine.pangolinprecision/.SubcategoryActivity} from pid 31688
-D/PangolinPrecision(31688): text length: 4235
-D/PangolinPrecision(31688): Women's Sale 3677318&0 /categories/23133296/products
-D/PangolinPrecision(31688): Women's Jackets & Vests 3677318&1 /categories/12125209/products
-D/PangolinPrecision(31688): Women's Shirts 3677318&2 /categories/21053826/products
-D/PangolinPrecision(31688): Women's Shorts 3677318&3 /categories/4484508/products
-D/PangolinPrecision(31688): Women's Outdoor & Casual Pants 3677318&4 /categories/12192156/products
-D/PangolinPrecision(31688): Women's Dresses & Skirts 3677318&5 /categories/11308563/products
-D/PangolinPrecision(31688): Women's Bras & Underwear 3677318&6 /categories/11302148/products
-D/PangolinPrecision(31688): Women's Sweatshirts & Sweaters 3677318&7 /categories/11315853/products
-D/PangolinPrecision(31688): Women's Fleece Clothing 3677318&8 /categories/3693436/products
-D/PangolinPrecision(31688): Women's Snow & Rain Pants 3677318&9 /categories/12987306/products
-D/PangolinPrecision(31688): Women's Accessories 3677318&10 /categories/11308560/products
-D/PangolinPrecision(31688): Women's Footwear 3677318&11 /categories/12850446/products
-D/PangolinPrecision(31688): Women's Socks 3677318&12 /categories/12850476/products
-D/PangolinPrecision(31688): Women's Swimwear 3677318&13 /categories/11526247/products
-D/PangolinPrecision(31688): Maternity Clothing 3677318&14 /categories/12311870/products
-D/PangolinPrecision(31688): Fitness Gear 3677318&15 /categories/11433726
-D/PangolinPrecision(31688): subcat size: 16
-D/PangolinPrecision(31688): position: 0 Grid item: Women's Sale
+I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.MainCategoriesActivity: +565ms (total +5s670ms)
+D/dalvikvm(32394): GC_FOR_ALLOC freed 652K, 11% free 9068K/10108K, paused 13ms, total 14ms
+D/dalvikvm(32394): GC_CONCURRENT freed 2K, 5% free 9633K/10108K, paused 3ms+1ms, total 17ms
+D/dalvikvm(32394): WAIT_FOR_CONCURRENT_GC blocked 10ms
+I/ActivityManager(  448): START u0 {dat=https://emsapi.bbhosted.com/categories/3712724 cmp=com.tstine.pangolinprecision/.SubcategoryActivity} from pid 32394
+D/PangolinPrecision(32394): text length: 1614
+D/PangolinPrecision(32394): Save on Your Favorite Brands 3712724&0 /categories/24527726
+D/PangolinPrecision(32394): Women's Clearance 3712724&1 /categories/13145959/products
+D/PangolinPrecision(32394): Gear Clearance 3712724&2 /categories/13133952/products
+D/PangolinPrecision(32394): Men's Clearance 3712724&3 /categories/13145960/products
+D/PangolinPrecision(32394): Kids' Clearance 3712724&4 /categories/4332214/products
+D/PangolinPrecision(32394): Footwear Clearance 3712724&5 /categories/11232837/products
+D/PangolinPrecision(32394): subcat size: 6
+D/PangolinPrecision(32394): position: 0 Grid item: Save on Your Favorite Brands
 V/PhoneStatusBar(  578): setLightsOn(true)
-D/PangolinPrecision(31688): position: 0 Grid item: Women's Sale
-D/dalvikvm(31688): GC_CONCURRENT freed 954K, 11% free 8983K/10084K, paused 3ms+2ms, total 20ms
-D/PangolinPrecision(31688): position: 0 Grid item: Women's Sale
-D/PangolinPrecision(31688): position: 1 Grid item: Women's Jackets & Vests
-D/PangolinPrecision(31688): position: 2 Grid item: Women's Shirts
-D/PangolinPrecision(31688): position: 3 Grid item: Women's Shorts
-D/dalvikvm(31688): GC_CONCURRENT freed 238K, 9% free 9229K/10084K, paused 5ms+4ms, total 27ms
-D/PangolinPrecision(31688): position: 4 Grid item: Women's Outdoor & Casual Pants
-D/PangolinPrecision(31688): position: 5 Grid item: Women's Dresses & Skirts
-D/PangolinPrecision(31688): position: 6 Grid item: Women's Bras & Underwear
-D/PangolinPrecision(31688): position: 7 Grid item: Women's Sweatshirts & Sweaters
-D/PangolinPrecision(31688): position: 8 Grid item: Women's Fleece Clothing
-D/dalvikvm(31688): GC_CONCURRENT freed 364K, 7% free 9460K/10084K, paused 6ms+2ms, total 33ms
-I/Choreographer(31688): Skipped 54 frames!  The application may be doing too much work on its main thread.
-D/PangolinPrecision(31688): position: 0 Grid item: Women's Sale
-I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.SubcategoryActivity: +1s311ms
-D/PangolinPrecision(31688): position: 0 Grid item: Women's Sale
-D/PangolinPrecision(31688): position: 0 Grid item: Women's Sale
-I/ActivityManager(  448): START u0 {dat=https://emsapi.bbhosted.com/categories/23133296/products cmp=com.tstine.pangolinprecision/.ProductsActivity} from pid 31688
-D/dalvikvm(  448): GC_FOR_ALLOC freed 1147K, 19% free 22057K/27092K, paused 83ms, total 84ms
-D/PangolinPrecision(31688): https://emsapi.bbhosted.com/categories/23133296/products
-D/dalvikvm(31688): GC_CONCURRENT freed 544K, 7% free 9591K/10280K, paused 6ms+2ms, total 35ms
-D/PangolinPrecision(31688): text length: 16504
-D/PangolinPrecision(31688): ProdInfo: title: KEEN Women's Owyhee Sandalsid: 13297652	retail price: 94.95	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: null	href: /products/13297652	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13572940t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13572940venh.jpg	2d: null	alt: KEEN Women's Owyhee Sandals - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Hyland Fleece Hoodieid: 12347334	retail price: 89.00	sale price: 62.98	value: 62.98	currency: USD	Promo: Clearance Special: EXTRA 40% OFF sale price of this item!  Discount in cart.	condition: null	href: /products/12347334	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11726267t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11726267venh.jpg	2d: null	alt: EMS Women's Hyland Fleece Hoodie - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Exodus Fleece Jacketid: 12454088	retail price: 99.00	sale price: 28.98	value: 28.98	currency: USD	Promo: Clearance Special: EXTRA 25% OFF sale price of this item!  Discount applied in cart.	condition: null	href: /products/12454088	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11924069t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11924069venh.jpg	2d: null	alt: EMS Women's Exodus Fleece Jacket - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: TEVA Women's Mush Mandalyn Wedge Ola 2 Flip-Flops, Blackid: 11975826	retail price: 30.00	sale price: 19.98	value: 19.98	currency: USD	Promo: 	condition: null	href: /products/11975826	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11056439t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11056439venh.jpg	2d: null	alt: TEVA Women's Mush Mandalyn Wedge Ola 2 Flip-Flops, Black - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: KEEN Women's Whisper Sandals, Greenbrier/Neutral Grayid: 13361253	retail price: 90.00	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: null	href: /products/13361253	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13692329t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13692329venh.jpg	2d: null	alt: KEEN Women's Whisper Sandals, Greenbrier/Neutral Gray - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: TEVA Women's Zirra Sandals, Blackid: 11975824	retail price: 70.00	sale price: 39.98	value: 39.98	currency: USD	Promo: 	condition: null	href: /products/11975824	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11056375t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11056375venh.jpg	2d: null	alt: TEVA Women's Zirra Sandals, Black - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: MARMOT Women's PreCip Rain Jacketid: 11854317	retail price: null	sale price: null	value: 79.98	currency: USD	Promo: Clearance Special: EXTRA 25% OFF sale price of select sizes and colors!  Discount applied in cart	condition: null	href: /products/11854317	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13409138t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13409138venh.jpg	2d: null	alt: MARMOT Women's PreCip Rain Jacket  - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Adirondack Knickersid: 11816563	retail price: 39.00	sale price: 24.98	value: 24.98	currency: USD	Promo: 	condition: null	href: /products/11816563	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13282119t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13282119venh.jpg	2d: null	alt: EMS Women's Adirondack Knickers - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Access Shell Jacketid: 11021459	retail price: 169.00	sale price: 66.98	value: 66.98	currency: USD	Promo: Clearance Special: EXTRA 25% OFF sale price of this item!  Discount applied in cart.	condition: null	href: /products/11021459	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-9166096t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-9166096venh.jpg	2d: null	alt: EMS Women's Access Shell Jacket - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Trailhead Plaid Shirt, S/Sid: 13082746	retail price: 49.00	sale price: 9.98	value: 9.98	currency: USD	Promo: 	condition: null	href: /products/13082746	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13151174t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13151174venh.jpg	2d: null	alt: EMS Women's Trailhead Plaid Shirt, S/S - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Hannah Fleece Jacketid: 12225425	retail price: 89.00	sale price: 62.98	value: 62.98	currency: USD	Promo: Clearance Special: EXTRA 40% OFF sale price of this item!  Discount in cart.	condition: null	href: /products/12225425	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11389406t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11389406venh.jpg	2d: null	alt: EMS Women's Hannah Fleece Jacket - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: MERRELL Women's Siren Sport GTX Hiking Shoes, Brindleid: 4048639	retail price: 120.00	sale price: 84.00	value: 84.00	currency: USD	Promo: 	condition: null	href: /products/4048639	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-7398160t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-7398160venh.jpg	2d: null	alt: MERRELL Women's Siren Sport GTX Hiking Shoes, Brindle - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Tempest Jacketid: 13160186	retail price: 149.00	sale price: 104.30	value: 104.30	currency: USD	Promo: 	condition: null	href: /products/13160186	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13316048t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13316048venh.jpg	2d: null	alt: EMS Women's Tempest Jacket - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: TEVA Women's Ewaso Sandals, Greyid: 13266745	retail price: 85.00	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: null	href: /products/13266745	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13525634t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13525634venh.jpg	2d: null	alt: TEVA Women's Ewaso Sandals, Grey - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Firefly Dressid: 13165246	retail price: 45.00	sale price: 16.98	value: 16.98	currency: USD	Promo: 	condition: null	href: /products/13165246	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13323475t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13323475venh.jpg	2d: null	alt: EMS Firefly Dress - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: SALOMON Women's 3D Fastpacker Mid GTX Hiking Bootsid: 11975823	retail price: 170.00	sale price: 99.98	value: 99.98	currency: USD	Promo: 	condition: null	href: /products/11975823	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11056325t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11056325venh.jpg	2d: null	alt: SALOMON Women's 3D Fastpacker Mid GTX Hiking Boots - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: THE NORTH FACE Women's Aurana Shortsid: 13222263	retail price: 50.00	sale price: 34.98	value: 34.98	currency: USD	Promo: 	condition: null	href: /products/13222263	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13419706t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13419706venh.jpg	2d: null	alt: THE NORTH FACE Women's Aurana Shorts - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Firefly Convertible Skirtid: 13165245	retail price: 49.00	sale price: 14.98	value: 14.98	currency: USD	Promo: 	condition: null	href: /products/13165245	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13323460t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13323460venh.jpg	2d: null	alt: EMS Firefly Convertible Skirt - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: ADIDAS Unisex ClimaCool Boat Lace Water Shoes, Prime Greenid: 13256980	retail price: 70.00	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: null	href: /products/13256980	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13502584t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13502584venh.jpg	2d: null	alt: ADIDAS Unisex ClimaCool Boat Lace Water Shoes, Prime Green - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
-D/PangolinPrecision(31688): ProdInfo: title: EMS Women's Firefly Crew, S/Sid: 13165243	retail price: 35.00	sale price: 9.98	value: 9.98	currency: USD	Promo: 	condition: null	href: /products/13165243	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13323420t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13323420venh.jpg	2d: null	alt: EMS Women's Firefly Crew, S/S - Eastern Mountain Sports	
-D/PangolinPrecision(31688): 
+D/dalvikvm(32394): GC_CONCURRENT freed 1235K, 14% free 9118K/10504K, paused 11ms+2ms, total 31ms
+D/PangolinPrecision(32394): position: 0 Grid item: Save on Your Favorite Brands
+D/PangolinPrecision(32394): position: 0 Grid item: Save on Your Favorite Brands
+D/PangolinPrecision(32394): position: 1 Grid item: Women's Clearance
+D/PangolinPrecision(32394): position: 2 Grid item: Gear Clearance
+D/PangolinPrecision(32394): position: 3 Grid item: Men's Clearance
+D/dalvikvm(32394): GC_CONCURRENT freed 252K, 11% free 9370K/10504K, paused 3ms+3ms, total 30ms
+D/PangolinPrecision(32394): position: 4 Grid item: Kids' Clearance
+D/PangolinPrecision(32394): position: 5 Grid item: Footwear Clearance
+I/Choreographer(32394): Skipped 39 frames!  The application may be doing too much work on its main thread.
+D/PangolinPrecision(32394): position: 0 Grid item: Save on Your Favorite Brands
+I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.SubcategoryActivity: +1s76ms
+D/PangolinPrecision(32394): position: 0 Grid item: Save on Your Favorite Brands
+D/PangolinPrecision(32394): position: 0 Grid item: Save on Your Favorite Brands
+D/dalvikvm(32394): GC_CONCURRENT freed 442K, 9% free 9571K/10504K, paused 5ms+6ms, total 42ms
+I/ActivityManager(  448): START u0 {dat=https://emsapi.bbhosted.com/categories/24527726 cmp=com.tstine.pangolinprecision/.ProductsActivity} from pid 32394
+D/dalvikvm(  448): GC_FOR_ALLOC freed 1869K, 19% free 22070K/27092K, paused 84ms, total 84ms
+D/PangolinPrecision(32394): text length: 1760
 V/PhoneStatusBar(  578): setLightsOn(true)
-I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.ProductsActivity: +447ms
-D/dalvikvm(29143): GC_CONCURRENT freed 517K, 8% free 8247K/8916K, paused 5ms+2ms, total 39ms
-D/dalvikvm(29143): WAIT_FOR_CONCURRENT_GC blocked 21ms
+I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.ProductsActivity: +257ms
+V/PhoneStatusBar(  578): setLightsOn(true)
+I/ActivityManager(  448): START u0 {dat=https://emsapi.bbhosted.com/categories/13145959/products cmp=com.tstine.pangolinprecision/.ProductsActivity} from pid 32394
+D/dalvikvm(  448): GC_FOR_ALLOC freed 839K, 20% free 21873K/27092K, paused 75ms, total 75ms
+D/dalvikvm(32394): GC_FOR_ALLOC freed 437K, 8% free 9660K/10500K, paused 25ms, total 25ms
+D/PangolinPrecision(32394): text length: 30598
+D/PangolinPrecision(32394): ProdInfo: title: KEEN Women's Owyhee Sandalsid: 13297652	retail price: 94.95	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: Not Available	href: /products/13297652	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13572940t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13572940venh.jpg	2d: null	alt: KEEN Women's Owyhee Sandals - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: EMS Women's Hyland Fleece Hoodieid: 12347334	retail price: 89.00	sale price: 62.98	value: 62.98	currency: USD	Promo: Clearance Special: EXTRA 40% OFF sale price of this item!  Discount in cart.	condition: Not Available	href: /products/12347334	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11726267t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11726267venh.jpg	2d: null	alt: EMS Women's Hyland Fleece Hoodie - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: EMS Women's Exodus Fleece Jacketid: 12454088	retail price: 99.00	sale price: 28.98	value: 28.98	currency: USD	Promo: Clearance Special: EXTRA 25% OFF sale price of this item!  Discount applied in cart.	condition: Not Available	href: /products/12454088	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11924069t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11924069venh.jpg	2d: null	alt: EMS Women's Exodus Fleece Jacket - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: SANUK Women's Yoga Mat Flip-Flopsid: 3651299	retail price: 30.00	sale price: 19.98	value: 19.98	currency: USD	Promo: 	condition: Not Available	href: /products/3651299	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-10409026t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-10409026venh.jpg	2d: null	alt: SANUK Women's Yoga Mat Flip-Flops - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: TEVA Women's Mush Mandalyn Wedge Ola 2 Flip-Flops, Blackid: 11975826	retail price: 30.00	sale price: 19.98	value: 19.98	currency: USD	Promo: 	condition: Not Available	href: /products/11975826	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11056439t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11056439venh.jpg	2d: null	alt: TEVA Women's Mush Mandalyn Wedge Ola 2 Flip-Flops, Black - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: KEEN Women's Whisper Sandals, Greenbrier/Neutral Grayid: 13361253	retail price: 90.00	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: Not Available	href: /products/13361253	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13692329t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13692329venh.jpg	2d: null	alt: KEEN Women's Whisper Sandals, Greenbrier/Neutral Gray - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: TEVA Women's Zirra Sandals, Blackid: 11975824	retail price: 70.00	sale price: 39.98	value: 39.98	currency: USD	Promo: 	condition: Not Available	href: /products/11975824	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11056375t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11056375venh.jpg	2d: null	alt: TEVA Women's Zirra Sandals, Black - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: OUTDOOR RESEARCH Swift Hatid: 3652528	retail price: 23.00	sale price: 12.98	value: 12.98	currency: USD	Promo: 	condition: Not Available	href: /products/3652528	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-10789395t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-10789395venh.jpg	2d: null	alt: OUTDOOR RESEARCH Swift Hat - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: MARMOT Women's PreCip Rain Jacketid: 11854317	retail price: null	sale price: null	value: 79.98	currency: USD	Promo: Clearance Special: EXTRA 25% OFF sale price of select sizes and colors!  Discount applied in cart	condition: Not Available	href: /products/11854317	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13409138t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13409138venh.jpg	2d: null	alt: MARMOT Women's PreCip Rain Jacket  - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: EMS Women's Adirondack Knickersid: 11816563	retail price: 39.00	sale price: 24.98	value: 24.98	currency: USD	Promo: 	condition: Not Available	href: /products/11816563	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13282119t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13282119venh.jpg	2d: null	alt: EMS Women's Adirondack Knickers - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: EMS Women's Access Shell Jacketid: 11021459	retail price: 169.00	sale price: 66.98	value: 66.98	currency: USD	Promo: Clearance Special: EXTRA 25% OFF sale price of this item!  Discount applied in cart.	condition: Not Available	href: /products/11021459	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-9166096t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-9166096venh.jpg	2d: null	alt: EMS Women's Access Shell Jacket - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: REEF Women's Ginger Flip-Flopsid: 3652759	retail price: 26.00	sale price: 12.98	value: 12.98	currency: USD	Promo: 	condition: Not Available	href: /products/3652759	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13677298t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13677298venh.jpg	2d: null	alt: REEF Women's Ginger Flip-Flops - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: SANUK Women's Yoga Spree 2 Flip-Flopsid: 13354842	retail price: 32.00	sale price: 19.98	value: 19.98	currency: USD	Promo: 	condition: Not Available	href: /products/13354842	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13671547t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13671547venh.jpg	2d: null	alt: SANUK Women's Yoga Spree 2 Flip-Flops - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: KEEN Women's Newport H2 Sandals, Norse Blue/Gargoyleid: 13361249	retail price: 100.00	sale price: 59.98	value: 59.98	currency: USD	Promo: 	condition: Not Available	href: /products/13361249	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13692289t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13692289venh.jpg	2d: null	alt: KEEN Women's Newport H2 Sandals, Norse Blue/Gargoyle - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: EMS Women's Trailhead Plaid Shirt, S/Sid: 13082746	retail price: 49.00	sale price: 9.98	value: 9.98	currency: USD	Promo: 	condition: Not Available	href: /products/13082746	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13151174t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13151174venh.jpg	2d: null	alt: EMS Women's Trailhead Plaid Shirt, S/S - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: EMS Women's Hannah Fleece Jacketid: 12225425	retail price: 89.00	sale price: 62.98	value: 62.98	currency: USD	Promo: Clearance Special: EXTRA 40% OFF sale price of this item!  Discount in cart.	condition: Not Available	href: /products/12225425	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-11389406t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-11389406venh.jpg	2d: null	alt: EMS Women's Hannah Fleece Jacket - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: THE NORTH FACE Horizon Breeze Brimmer Hat, Closeoutid: 4344847	retail price: 33.00	sale price: 18.98	value: 18.98	currency: USD	Promo: 	condition: Not Available	href: /products/4344847	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-8290825t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-8290825venh.jpg	2d: null	alt: THE NORTH FACE Horizon Breeze Brimmer Hat, Closeout - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: KEEN Women's Whisper Sandals, Barberry/Neutral Grayid: 13361252	retail price: 90.00	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: Not Available	href: /products/13361252	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13692319t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13692319venh.jpg	2d: null	alt: KEEN Women's Whisper Sandals, Barberry/Neutral Gray - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: KEEN Women's Whisper Sandals, Black/Gargoyleid: 13361251	retail price: 90.00	sale price: 49.98	value: 49.98	currency: USD	Promo: 	condition: Not Available	href: /products/13361251	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13692309t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13692309venh.jpg	2d: null	alt: KEEN Women's Whisper Sandals, Black/Gargoyle - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+D/PangolinPrecision(32394): ProdInfo: title: KEEN Women's Clearwater CNX Sandals, Norse Blue/Super Lemonid: 13361248	retail price: 100.00	sale price: 59.98	value: 59.98	currency: USD	Promo: 	condition: Not Available	href: /products/13361248	thumb: http://ems.imageg.net/graphics/product_images/pEMS1-13692279t100.jpg	1x: http://ems.imageg.net/graphics/product_images/pEMS1-13692279venh.jpg	2d: null	alt: KEEN Women's Clearwater CNX Sandals, Norse Blue/Super Lemon - Eastern Mountain Sports	
+D/PangolinPrecision(32394): 
+I/Choreographer(32394): Skipped 97 frames!  The application may be doing too much work on its main thread.
+D/PangolinPrecision(32394): position: 0 Grid item: KEEN Women's Owyhee Sandals
+V/PhoneStatusBar(  578): setLightsOn(true)
+D/PangolinPrecision(32394): position: 0 Grid item: KEEN Women's Owyhee Sandals
+D/PangolinPrecision(32394): position: 0 Grid item: KEEN Women's Owyhee Sandals
+D/dalvikvm(32394): GC_CONCURRENT freed 676K, 9% free 9696K/10560K, paused 15ms+2ms, total 32ms
+D/PangolinPrecision(32394): position: 1 Grid item: EMS Women's Hyland Fleece Hoodie
+D/dalvikvm(29143): GC_CONCURRENT freed 549K, 9% free 8163K/8900K, paused 3ms+2ms, total 22ms
+D/dalvikvm(29143): WAIT_FOR_CONCURRENT_GC blocked 13ms
+D/PangolinPrecision(32394): position: 2 Grid item: EMS Women's Exodus Fleece Jacket
 D/Finsky  (29143): [1] 5.onFinished: Installation state replication succeeded.
-D/dalvikvm(26885): GC_CONCURRENT freed 830K, 10% free 9921K/10988K, paused 3ms+3ms, total 44ms
+D/PangolinPrecision(32394): position: 3 Grid item: SANUK Women's Yoga Mat Flip-Flops
+D/PangolinPrecision(32394): position: 4 Grid item: TEVA Women's Mush Mandalyn Wedge Ola 2 Flip-Flops, Black
+D/dalvikvm(32394): GC_FOR_ALLOC freed 299K, 7% free 9948K/10640K, paused 27ms, total 27ms
+D/PangolinPrecision(32394): position: 5 Grid item: KEEN Women's Whisper Sandals, Greenbrier/Neutral Gray
+D/PangolinPrecision(32394): position: 6 Grid item: TEVA Women's Zirra Sandals, Black
+D/PangolinPrecision(32394): position: 7 Grid item: OUTDOOR RESEARCH Swift Hat
+D/PangolinPrecision(32394): position: 8 Grid item: MARMOT Women's PreCip Rain Jacket
+I/Choreographer(32394): Skipped 65 frames!  The application may be doing too much work on its main thread.
+D/PangolinPrecision(32394): position: 0 Grid item: KEEN Women's Owyhee Sandals
+I/ActivityManager(  448): Displayed com.tstine.pangolinprecision/.ProductsActivity: +2s869ms
+D/PangolinPrecision(32394): position: 0 Grid item: KEEN Women's Owyhee Sandals
+D/PangolinPrecision(32394): position: 0 Grid item: KEEN Women's Owyhee Sandals
+D/dalvikvm(32394): GC_FOR_ALLOC freed 527K, 8% free 10187K/10984K, paused 29ms, total 29ms
+D/dalvikvm(32394): GC_FOR_ALLOC freed 201K, 9% free 10365K/11276K, paused 15ms, total 15ms
+D/dalvikvm(32394): GC_FOR_ALLOC freed 26K, 9% free 10539K/11480K, paused 15ms, total 15ms
+D/dalvikvm(32394): GC_FOR_ALLOC freed <1K, 9% free 10739K/11684K, paused 15ms, total 15ms
+D/PangolinPrecision(32394): position: 9 Grid item: EMS Women's Adirondack Knickers
+D/PangolinPrecision(32394): position: 10 Grid item: EMS Women's Access Shell Jacket
+D/PangolinPrecision(32394): position: 11 Grid item: REEF Women's Ginger Flip-Flops
+D/dalvikvm(32394): GC_FOR_ALLOC freed 148K, 7% free 11239K/11984K, paused 13ms, total 13ms
+D/PangolinPrecision(32394): position: 12 Grid item: SANUK Women's Yoga Spree 2 Flip-Flops
+D/PangolinPrecision(32394): position: 13 Grid item: KEEN Women's Newport H2 Sandals, Norse Blue/Gargoyle
+D/PangolinPrecision(32394): position: 14 Grid item: EMS Women's Trailhead Plaid Shirt, S/S
 I/GCoreUlr(26885): Successfully inserted location
-I/GCoreUlr(26885): Not calling LocationReportingService, hasMoved: false, elapsed millis: 1361344, request: Tablet
+I/GCoreUlr(26885): Not calling LocationReportingService, hasMoved: false, elapsed millis: 2154672, request: Tablet
+D/dalvikvm(26885): GC_CONCURRENT freed 912K, 10% free 9911K/10992K, paused 17ms+3ms, total 62ms
+D/dalvikvm(26885): WAIT_FOR_CONCURRENT_GC blocked 33ms
+I/GCoreUlr(26885): Successfully inserted location
+I/GCoreUlr(26885): Not calling LocationReportingService, hasMoved: false, elapsed millis: 2214702, request: Tablet

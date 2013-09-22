@@ -42,8 +42,16 @@ public class ProductsActivity extends Activity{
 		setContentView( R.layout.grid_view );
 		Intent intent = getIntent();
 		Uri uri = intent.getData();
-		Log.d( Const.APP_TAG, uri.toString() );
 		ArrayList<Product> products = getProducts( uri );
+		GridView prodGrid = (GridView) findViewById( R.id.grid );
+		prodGrid.setAdapter( new ImgAdapter( this, products ) );
+		prodGrid.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+				@Override
+				public void onItemClick( AdapterView<?> parent, View v,
+																 int position, long id ){
+				}
+			});
+		
 	}
 
 	public ArrayList<Product> getProducts( Uri uri ){
@@ -59,14 +67,20 @@ public class ProductsActivity extends Activity{
 			//e.printStackTrace();
 			//}
 
+		
 		try{
+			if( !jobj.has("products" ) )
+				return products;
 			JSONArray prodArray = (JSONArray) jobj.get("products");
 			for( int i = 0; i < prodArray.length(); i++ ){
 				String prodTitle = null, href = null, id = null;
 				
 				JSONObject prodObj = (JSONObject) prodArray.get(i);
 
-				if( prodObj.has("title") ) prodTitle = prodObj.getString("title");
+				if( prodObj.has("title") )
+					prodTitle = prodObj.getString("title");
+				else
+					prodTitle = "Not Available";
 				if( prodObj.has("href" ) ) href = prodObj.getString("href");
 				if( prodObj.has("id" ) ) id = prodObj.getString("id");
 
@@ -99,10 +113,19 @@ public class ProductsActivity extends Activity{
 
 					for( int j = 0; j < imgArray.length(); j++ ){
 						JSONObject imgObj = (JSONObject) imgArray.get(j);
-						if( imgObj.has("thumb" ) ) thumb = new Image( imgObj.getString("thumb" ) );
-						if( imgObj.has("1x") ) x = new Image( imgObj.getString("1x" ) );
+						if( imgObj.has("thumb" ) )
+							thumb = new Image( imgObj.getString("thumb" ) );
+						else
+							thumb = new Image("http://placehold.it/100/c11b17/ffffff&text=thumb");
+						
+						if( imgObj.has("1x") )
+							x = new Image( imgObj.getString("1x" ) );
+						else
+							x = new Image("http://placehold.it/300/c11b17/ffffff&text=1x");
+						
 						if( imgObj.has("2x") ) xx = new Image( imgObj.getString("2x") );
 						if( imgObj.has("alt") ) alt = imgObj.getString("alt");
+						
 						prodImages.add( new ProductImage( thumb, x, xx, alt ) );
 					}
 				}
@@ -116,10 +139,16 @@ public class ProductsActivity extends Activity{
 						if( promoObj.has("description") ) description = promoObj.getString("description");
 						promos.add( description );
 					}
+				}else{
+					promos.add("No promos");
 				}
 				
 				String condition = null;
-				if( prodObj.has("condition") ) condition = prodObj.getString("condition");
+				if( prodObj.has("condition") )
+					condition = prodObj.getString("condition");
+				else
+					condition = "Not Available";
+				
 				Product prod = new Product( prodTitle, prodImages, promos,
 																		priceHash, id, href, condition );
 

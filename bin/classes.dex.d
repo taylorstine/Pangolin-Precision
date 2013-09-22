@@ -11,6 +11,7 @@
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/Category.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/SubcategoryActivity.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/R$id.class \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/ProductsActivity$1.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/HttpGetter.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/Product.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/R$string.class \
