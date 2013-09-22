@@ -49,6 +49,10 @@ public class ProductsActivity extends Activity{
 				@Override
 				public void onItemClick( AdapterView<?> parent, View v,
 																 int position, long id ){
+					Product selected = (Product) parent.getItemAtPosition( position );
+					Intent intent = new Intent( v.getContext(), ProductDetailsActivity.class );
+					intent.setData( Uri.parse( Const.HOST + selected.getHref() ) );
+					startActivity( intent )
 				}
 			});
 		
@@ -154,14 +158,11 @@ public class ProductsActivity extends Activity{
 
 				products.add( prod );
 				//Log.d(Const.APP_TAG, "Prod title: " + prodTitle );
-				Log.d( Const.APP_TAG, "ProdInfo: " + prod.toString() );
-				
+				//Log.d( Const.APP_TAG, "ProdInfo: " + prod.toString() );
 			}
 		}catch(JSONException e) {
 			e.printStackTrace();
 		}
-
-		
 		return products;
 	}
 

@@ -71,6 +71,7 @@ public class JSONParser{
 		
 		try{
 			baseInfoMap = getBaseInfo( prodObj )
+				
 			if( prodObj.has("price" )){
 				priceHash = getKeyValues( prodObj.getJSONObject("price") );
 			}
@@ -78,9 +79,11 @@ public class JSONParser{
 			if( prodObj.has("images" ) ){
 				prodImages = getImages( prodObj.getJSONArray("images") );
 			}
+			
 			if( prodObj.has("promos") ){
 				promos = getPromos( prodObj.getJSONArray( "promos" ) );
 			}
+			
 			if( prodObj.has("condition") ) condition = prodObj.getString("condition");
 
 			Product prod = new Product( baseInfoMap, prodImages, promos,
