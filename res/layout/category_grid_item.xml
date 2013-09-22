@@ -3,22 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="8dp"
     >
   <ImageView
       android:id="@+id/item_image"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_centerInParent="true"
-      android:gravity="center"
-      />
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+   />
   <TextView
       android:id="@+id/item_text"
-      android:layout_width="wrap_content"
-      android:layout_height="fill_parent"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
       android:layout_below="@id/item_image"
       android:layout_centerHorizontal= "true"
-      android:textSize="10dp"
+      android:textSize="12sp"
       android:gravity="center"
       />
 </RelativeLayout>
