@@ -42,6 +42,7 @@ public class ShowcaseActivity extends Activity {
 			Intent prodIntent = new Intent( this, ProductDetailsActivity.class );
 			prodIntent.setData( uri );
 			startActivity(prodIntent);
+			finish();
 		}
 		else{
 			if( gridItems.get(0).hasImage() ){

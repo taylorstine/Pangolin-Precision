@@ -34,7 +34,10 @@ public class ProductDetail{
 		mImages = images;
 	}
 
-	public String hasValue( String key ){ return mInfo.containsKey(key);}
+	public HashMap<String,String> getImage( int idx ){
+		return mImages.get(idx);
+	}
+	public boolean hasValue( String key ){ return mInfo.containsKey(key);}
 	public String getValue( String key ){
 		if( !hasValue(key ) )
 			return "No item";
