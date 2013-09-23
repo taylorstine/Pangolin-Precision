@@ -82,7 +82,7 @@ public class ImgAdapter extends BaseAdapter{
 		else
 			retailTV.setText("0.00");
 		TextView currencyTV = (TextView) gridItemView.findViewById( R.id.item_currency );
-		currency.setText( gridItem.getValue("currency") );
+		currencyTV.setText( gridItem.getValue("currency") );
 
 		if( gridItem.hasValue("sale" ) ){
 			retailTV.setTextColor(Color.rgb(255, 20, 20 ) );

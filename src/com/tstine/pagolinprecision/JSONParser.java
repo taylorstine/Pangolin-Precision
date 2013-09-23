@@ -129,66 +129,156 @@ public class JSONParser{
 
 		return new Gridable( img, infoMap, Const.CATEGORY_GRID_LAYOUT );
 	}
-	/*	
-	public static ArrayList<Category> getCategories( Uri uri ){
-		ArrayList<Category> categories = new ArrayList<Category>();
 
+	public static ProductDetail getProductDetail( Uri uri ){
+		JSONObject jobj = null;
+		HashMap<String,String> info = new HashMap<String,String>();
+		ArrayList<String> bullets = new ArrayList<String>();
+		ArrayList<String> promos = new ArrayList<String>();
+		ArrayList<Variation> variations = new ArrayList<Variation>();
+		ArrayList<Gridable> upsales = new ArrayList<Gridable>();
+		ArrayList<Gridable> crossSales = new ArrayList<Gridable>();
+		ArrayList<HashMap<String,String>> imageList = new ArrayList<HashMap<String,String>>();
 		try{
-			if( !jobj.has("categories") )
-				return categories;
-			JSONArray catArray = (JSONArray) jobj.get( "categories" );
-			for( int i = 0; i < catArray.length(); i++ ){
-				categories.add( getCategory( (JSONObject) catArray.get(i)) );
+			jobj = JSONParser.parse( new URI( uri.toString() ) );
+		}catch( URISyntaxException e ){
+			e.printStackTrace();
+		}
+		try{
+			
+			info.putAll( getKeyValues( jobj ) );
+			
+			if( jobj.optJSONObject("identifiers") != null )
+				info.putAll( getKeyValues( jobj.optJSONObject("identifiers") ));
+			
+			if( jobj.optJSONObject("description" ) != null ){
+				JSONObject descripObj = jobj.optJSONObject("description");
+				info.put( "leadingEquity",
+									descripObj.optString("leadingEquity", "None") );
 			}
+
+			JSONArray bulletArray = jobj.optJSONObject("description").optJSONArray("bullets");
+			for( int i = 0; i < bulletArray.length(); i++ ){
+				bullets.add( (String) bulletArray.get(i) );
+			}
+			JSONArray promoArray = jobj.optJSONArray("promos");
+			if( promoArray != null ){
+				for( int i = 0; i < promoArray.length(); i++ ){
+					promos.add( promoArray.optJSONObject(i)
+											.optString("description", "none") );
+				}
+			}else{
+					JSONObject promoObj = jobj.optJSONObject("promos");
+					if( promoObj != null )
+						promos.add( promoObj.optString("description", "none") );
+
+			}
+			
+			JSONArray varArray = jobj.optJSONArray( "variations" );
+			if( varArray != null ){
+				for( int i = 0; i < varArray.length(); i++ ){
+					variations.add( getVariation( varArray.optJSONObject(i) ) );
+				}
+			}
+
+			JSONArray upsaleArray = jobj.optJSONArray( "up_sales" );
+			if( upsaleArray != null ){
+				for( int i = 0; i < upsaleArray.length(); i++ ){
+					upsales.add( getProductGridItem( upsaleArray.optJSONObject(i) ) );
+				}
+			}
+			
+			JSONArray crossSaleArray = jobj.optJSONArray("cross_sales" );
+			if( crossSaleArray != null ){
+				for( int i = 0; i < crossSaleArray.length(); i++ ){
+					crossSales.add( getProductGridItem( crossSaleArray.optJSONObject(i ) ));
+				}
+			}
+
+			if( jobj.has("images") && jobj.optJSONArray("images") != null ){
+				imageList = getImageList( jobj.optJSONArray("images") );
+			}
+
+										
 		}catch( JSONException e ){
 			e.printStackTrace();
 		}
-		return categories;
+		return new ProductDetail( info, bullets, promos,
+															variations, upsales, crossSales,
+															imageList);
 	}
 
-	public static Category getCategory( JSONObject jobj ){
-		HashMap<String,String> base = getBaseInfo( jobj );
-		Image img = null;
-		try{
-			if( jobj.has("_bb_image" ) ){
-				JSONObject imgJson = (JSONObject) jobj.get("_bb_image");
-				String src = "http://placehold.it/150/c11b17/ffffff&text=category";
-				String alt = "Image text";
-				if( imgJson.has("src" ) )
-					src = imgJson.getString("src");
-				if( imgJson.has("alt") )
-					alt = imgJson.getString("alt");
-				img = new Image( src, alt );
-			}
-			else if( jobj.has("image") ){
-				img = new Image( jobj.getString("image") );
-			}
-		}catch( JSONException e ){
-			e.printStackTrace();
+	private static Variation getVariation( JSONObject varObj ){
+		HashMap<String, String> info = new HashMap<String,String>();
+		HashMap<String,String> options = new HashMap<String,String>();
+		ArrayList<HashMap<String,String>> imageList = new ArrayList<HashMap<String,String>>();
+		info.putAll( getKeyValues( varObj ) );
+		
+		if( varObj.has("identifiers") && varObj.optJSONObject("identifiers")!= null )
+			info.putAll( getKeyValues( varObj.optJSONObject("identifiers") ) );
+		if( varObj.has("price" ) && varObj.optJSONObject("price") != null)
+			info.putAll( getKeyValues(varObj.optJSONObject("price") ) );
+		if( varObj.has("images") && varObj.optJSONArray("images") != null )
+			imageList = getImageList( varObj.optJSONArray("images") );
+		if( varObj.has("options" ) && varObj.optJSONObject("options") != null)
+			options.putAll( getKeyValues( varObj.optJSONObject( "options" ) ) );
+		if( varObj.has("availability") && varObj.optJSONObject("availability") != null )
+			info.putAll( getAvailabilityMap( varObj.optJSONObject("availability" ) ) );
+		if( varObj.has("price") && varObj.optJSONObject("price") != null )
+			info.putAll( getKeyValues( varObj.optJSONObject("price") ) );
+
+		return new Variation( info, options, imageList );
+	}
+
+	private static HashMap<String, String> getAvailabilityMap( JSONObject availObj ){
+		HashMap<String, String> availMap = new HashMap<String, String>();
+		availMap.put( "availability", "N/A" );
+		availMap.put( "shipping", "N/A" );
+		if( availObj.has("online") ){
+			JSONObject onlineObj = availObj.optJSONObject("online");
+			availMap.put( "availability", onlineObj.optString("value", "N/A") );
+			availMap.put( "shipping", onlineObj.optString("shipping", "N/A") );
 		}
-		return new Category( base, img );
-		}*/
+		return availMap;
+	}
+	
+	private static ArrayList<HashMap<String,String>> getImageList(
+		JSONArray imgArray ){
+		ArrayList<HashMap<String,String>> imgList =
+			new ArrayList<HashMap<String,String>>();
+		for( int i=0 ; i< imgArray.length(); i++ ){
+			imgList.add( getImageMap( imgArray.optJSONObject(i)) );
+		}
+		return imgList;
+	}
+	
+	private static HashMap<String, String> getImageMap( JSONObject imgObj ){
+		HashMap<String, String> imageMap = new HashMap<String,String>();
+		imageMap.put( "thumb", imgObj.optString(
+									 "thumb","http://placehold.it/100/c11b17/ffffff&text=thumb"));
+		imageMap.put( "1x", imgObj.optString(
+									 "1x","http://placehold.it/100/c11b17/ffffff&text=thumb"));
+		imageMap.put( "2x", imgObj.optString(
+									 "1x","http://placehold.it/100/c11b17/ffffff&text=thumb"));
+		return imageMap;
+	}
 
 	public static HashMap<String,String> getKeyValues( JSONObject jobj ){
 		HashMap<String, String> map = new HashMap<String, String>();
 		Iterator<Object> keys = jobj.keys();
 		while( keys.hasNext() ){
-			String keyString = String.valueOf(keys.next() );
-			String valueString = null;
-			try{
-				valueString = jobj.getString( keyString );
-			}catch( JSONException e ){
-				e.printStackTrace();
+			String keyString = String.valueOf( keys.next() );
+			if( keyString == null ){
+				continue;
 			}
-			map.put( keyString, valueString );
+			String valueString = null;
+			Object obj = jobj.opt(keyString);
+			if( obj != null && obj instanceof String ){
+				valueString = jobj.optString( keyString, "none" );
+				map.put( keyString, valueString );
+			}
 		}
 		return map;
 	}
-
-	public static HashMap<String,String> getBaseInfo( JSONObject jobj ){
-		HashMap< String, String > infoMap = getKeyValues( jobj );
-		return infoMap;
-	}
-
 
 }

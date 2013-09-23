@@ -22,6 +22,8 @@
         </activity>
         <activity android:name="ShowcaseActivity">
         </activity>
+        <activity android:name="ProductDetailsActivity">
+        </activity>
                   
     </application>
 </manifest>

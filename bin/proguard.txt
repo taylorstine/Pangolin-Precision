@@ -1,6 +1,9 @@
 # view AndroidManifest.xml #generated:16
 -keep class com.tstine.pangolinprecision.MainActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:25
+-keep class com.tstine.pangolinprecision.ProductDetailsActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:23
 -keep class com.tstine.pangolinprecision.ShowcaseActivity { <init>(...); }
 

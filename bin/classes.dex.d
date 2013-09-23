@@ -3,6 +3,7 @@
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/ShowcaseActivity.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/Const.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/R$layout.class \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/ProductDetailsActivity.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/Subcategory.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/Image.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/MainActivity.class \
@@ -20,6 +21,8 @@
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/CategoriesActivity$1.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/R$string.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/ProductImage.class \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/Variation.class \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/ProductDetail.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/SubcategoryActivity$1.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/CategoriesActivity.class \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/classes/com/tstine/pangolinprecision/ImgAdapter.class \
