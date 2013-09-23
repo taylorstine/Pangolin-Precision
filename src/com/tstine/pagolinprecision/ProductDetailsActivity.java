@@ -16,7 +16,10 @@ import android.util.Log;
 import android.net.Uri;
 
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ImageView;
+
+import android.view.View;
 
 public class ProductDetailsActivity extends Activity{
 	@Override
@@ -49,7 +52,9 @@ public class ProductDetailsActivity extends Activity{
 		}
 		bulletsTV.setMinLines( prodBullets.size() );
 		bulletsTV.setText( bullets.toString() );
-		
-		
+	}
+
+	public void addToCartClick( View view ){
+		Toast.makeText( this, "Added to cart!", Toast.LENGTH_SHORT ).show();
 	}
 }

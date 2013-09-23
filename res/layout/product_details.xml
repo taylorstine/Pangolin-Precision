@@ -21,6 +21,18 @@
       android:layout_centerHorizontal="true"
       android:layout_below="@id/product_title"
       />
+  
+  <Button
+      android:id="@+id/add_to_cart_button"
+      android:layout_height="wrap_content"
+      android:layout_width = "wrap_content"
+      android:layout_below = "@id/main_image"
+      android:layout_centerHorizontal="true"
+      android:text="@string/addToCartButton"
+      android:onClick="addToCartClick"
+      android:textSize="12sp"
+      />
+  
   <TextView
       android:id="@+id/product_leading_equity"
       android:layout_height="wrap_content"
@@ -28,7 +40,7 @@
       android:gravity="left"
       android:textSize="12sp"
       android:layout_centerHorizontal="true"
-      android:layout_below="@id/main_image"
+      android:layout_below="@id/add_to_cart_button"
       />
   <TextView
       android:id="@+id/product_bullets"
