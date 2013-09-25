@@ -65,8 +65,6 @@ public class ImageUrlAdapter extends BaseAdapter{
 		}catch( CancellationException e ){
 			e.printStackTrace();
 		}
-
-						//mImages = ImageLoader.loadImages( uris.toArray(new URI[uris.size()]) );
 	}
 
 	@Override

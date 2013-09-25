@@ -46,7 +46,6 @@ public class MainActivity extends Activity
 		String networkInfo = "Type: " + net.getTypeName() +
 			"\nSubtype: " + net.getSubtypeName() +
 			"\nExtra: " + net.getExtraInfo ();
-		Log.d( Const.APP_TAG, networkInfo );
 		boolean isConnected = net.isConnectedOrConnecting();
 		return isConnected;
 	}

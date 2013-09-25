@@ -68,18 +68,9 @@ public class JSONParser{
 			jobj = JSONParser.parse( new URI(uri.toString() ));
 			if( jobj == null )
 				return gridItems;
-			//jobj = new JSONParseTask().execute( new URI( uri.toString() ) ).get();
 		}catch( URISyntaxException e ){
 			e.printStackTrace();
-		}/*catch( InterruptedException e ){
-			e.printStackTrace();
-		}catch( ExecutionException e ){
-			e.printStackTrace();
-		}catch( CancellationException e ){
-			e.printStackTrace();
-		}/*catch( TimeoutException e ){
-			e.printStackTrace();
-			}*/
+		}
 
 		if( jobj.has("categories") ){
 			JSONArray catArray = null;
@@ -89,20 +80,8 @@ public class JSONParser{
 				e.printStackTrace();
 			}
 			for( int i = 0; i < catArray.length(); i++ ){
-					//try{
-						//gridItems.add( new GetCategoryGridItemsTask().execute( (JSONObject) catArray.get(i)).get());
 				if( catArray.optJSONObject(i) != null )
 					gridItems.add( getCategoryGridItem(catArray.optJSONObject(i)));
-
-
-													 /*}catch( InterruptedException e ){
-						e.printStackTrace();
-					}catch( ExecutionException e ){
-						e.printStackTrace();
-					}catch( CancellationException e ){
-						e.printStackTrace();
-						}*/
-						//}
 				}
 		}
 
@@ -118,86 +97,9 @@ public class JSONParser{
 					gridItems.add( getProductGridItem( (JSONObject) prodArray.optJSONObject(i)));
 			}
 
-			/*
-				try{
-						
-				gridItems.add(
-				new GetProductGridItemsTask()
-				.execute( (JSONObject) prodArray.get(i) ).get() );
-				}catch( InterruptedException e ){
-				e.printStackTrace();
-				}catch( ExecutionException e ){
-				e.printStackTrace();
-				}catch( CancellationException e ){
-				e.printStackTrace();
-				}*/
 		}
 		return gridItems;
 	}
-
-	/*	private class GetProductGridItemsTask extends AsyncTask< JSONObject, Void, Gridable > {
-		protected  Gridable doInBackground( JSONObject jobj){
-			Image img = null;
-			HashMap<String,String> infoMap = getKeyValues(jobj);
-			HashMap<String,String> priceMap = new HashMap<String,String>();
-			String src= "http://placehold.it/100/c11b17/ffffff&text=thumb";
-			String alt= "Image text";
-			try{
-				if( jobj.has("price" ) ){
-					priceMap = getKeyValues( jobj.getJSONObject("price") );
-				}
-				if(!priceMap.containsKey("currency" ) )
-					priceMap.put("currency","USD");
-
-				if( jobj.has("image" ) ){
-					JSONObject imgObj = jobj.getJSONObject("image");
-					if( imgObj.has("thumbs") ){
-						HashMap<String, String> imgSrc = getKeyValues( imgObj.getJSONObject("thumbs") );
-						if( imgSrc.containsKey("small") ){
-							src = imgSrc.get("small");
-						}
-						else if( imgSrc.containsKey("large") ){
-							src = imgSrc.get("large");
-						}
-					}
-				}
-			}catch( JSONException e){
-				e.printStackTrace();
-			}
-			img = new Image( src, alt );
-			infoMap.putAll(priceMap);
-			return new Gridable( img, infoMap, Const.PRODUCT_GRID_LAYOUT );
-		}
-		}*/
-
-	/*	private class GetCategoryGridItemsTask extends AsyncTask< JSONObject, Void, Gridable>{
-		protected Gridable doInBackground( JSONObject jobj ){
-			Image img = null;
-			HashMap<String, String> infoMap = new HashMap<String,String>();
-
-			infoMap.putAll(getKeyValues( jobj ));
-			try{
-				if( jobj.has("_bb_image" ) ){
-					JSONObject imgJson = (JSONObject) jobj.get("_bb_image");
-					String src = "http://placehold.it/150/c11b17/ffffff&text=category";
-					String alt = "Image text";
-					if( imgJson.has("src" ) )
-						src = imgJson.getString("src");
-					if( imgJson.has("alt") )
-						alt = imgJson.getString("alt");
-					img = new Image( src, alt );
-				}
-				else if( jobj.has("image") ){
-					img = new Image( jobj.getString("image") );
-				}
-			}catch( JSONException e ){
-				e.printStackTrace();
-			}
-
-			return new Gridable( img, infoMap, Const.CATEGORY_GRID_LAYOUT );
-		}
-		}*/
-
 
 	public static Gridable getProductGridItem( JSONObject jobj){
 		Image img = null;
@@ -278,13 +180,7 @@ public class JSONParser{
 			jobj = JSONParser.parse( new URI( uri.toString() ) );
 		}catch( URISyntaxException e ){
 			e.printStackTrace();
-		}/*catch( InterruptedException e ){
-			e.printStackTrace();
-		}catch( ExecutionException e ){
-			e.printStackTrace();
-		}catch( CancellationException e ){
-			e.printStackTrace();
-			}*/
+		}
 		
 		try{
 			

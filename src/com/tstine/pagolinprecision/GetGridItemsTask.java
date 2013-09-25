@@ -48,12 +48,10 @@ public class GetGridItemsTask extends AsyncTask< Uri, Void, ArrayList<Gridable>>
 	}
 	@Override
 	protected void onPreExecute(){
-		Log.d(Const.APP_TAG, "Start get grid items" );
 	}
 
 	@Override
 	protected void onPostExecute( final ArrayList<Gridable> grid){
-		Log.d(Const.APP_TAG, "Done get grid items");
 		if( mDialog.isShowing() ){
 			mDialog.dismiss();
 		}

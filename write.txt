@@ -1,5 +1,6 @@
 I could not get the add to cart feature to work.  Mostly I am unsure of what needs to be in the HTTP post request.  I'm a little confused by the API listing.  If you would like to give me a hint, I can iterate and retry the post request.  My post requests were able to get a response from the server, but I couldn't get anything into the cart
 
+  
 In addition to this issue, below are some of the overall issues I have with the app, just for reference on what I could do better if given more time:
 1. The UI is a little boring - Something that in the requirements wasn't a priority, but I still think it should be nicer
 2. Sometimes the app gets sleepy - the ui will go black sometimes when its trying to parse JSON code.  This is something I could fix with more efficient code. Which brings me to..

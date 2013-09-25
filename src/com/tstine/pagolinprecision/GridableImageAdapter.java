@@ -62,11 +62,6 @@ public class GridableImageAdapter extends BaseAdapter{
 	
 	public View setupSwatchGridItem( Gridable gridItem, View gridItemView ){
 		ImageView img = (ImageView) gridItemView.findViewById( R.id.item_image );
-		//		try{
-			//img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
-		//		}catch( URISyntaxException e ){
-		//e.printStackTrace();
-		//}
 		img.setImageBitmap( mImgMap.get( gridItem.getImage().getSrc() ) );
 		return gridItemView;
 
@@ -76,13 +71,7 @@ public class GridableImageAdapter extends BaseAdapter{
 		TextView infoTV = (TextView) gridItemView.findViewById( R.id.item_text );
 		infoTV.setText( gridItem.getCaption() );
 		ImageView img = (ImageView) gridItemView.findViewById( R.id.item_image );
-		/*try{
-			img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
-		}catch( URISyntaxException e ){
-			e.printStackTrace();
-			}*/
 		img.setImageBitmap( mImgMap.get( gridItem.getImage().getSrc() ) );
- 		Log.d(Const.APP_TAG, "src: "+ gridItem.getImage().getSrc() );
 		return gridItemView;
 	}
 	
@@ -91,13 +80,7 @@ public class GridableImageAdapter extends BaseAdapter{
 		TextView titleTV = (TextView) gridItemView.findViewById( R.id.item_title );
 		titleTV.setText( gridItem.getValue("title") );
 		ImageView img = (ImageView) gridItemView.findViewById( R.id.item_image );
-		/*try{
-			img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
-		}catch( URISyntaxException e ){
-			e.printStackTrace();
-			}*/
 		img.setImageBitmap( mImgMap.get( gridItem.getImage().getSrc() ) );
-
 
 		TextView retailTV = (TextView) gridItemView.findViewById( R.id.item_retail_price );
 		retailTV.setText( gridItem.getValue("retail") );

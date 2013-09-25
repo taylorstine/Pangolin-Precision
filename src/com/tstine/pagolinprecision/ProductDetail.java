@@ -157,9 +157,6 @@ public class ProductDetail{
 		for( Variation v : mVariations ){
 			String swatch = v.getValue("swatch");
 			String option = v.getCaption();
-			//Log.d( Const.APP_TAG, "get swatch: " + swatch );
-			//Log.d( Const.APP_TAG, "get Cap: " + option );
-
 			if( varOptions.containsKey( swatch) )
 				varOptions.get( swatch ).add( option );
 			else{

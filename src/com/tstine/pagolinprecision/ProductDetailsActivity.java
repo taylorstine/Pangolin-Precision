@@ -68,7 +68,6 @@ public class ProductDetailsActivity extends Activity{
 				 
 		final HashMap<String,ArrayList<String>> varOptions = prodDetail.getVariationOptions();
 		ArrayList<String>options = varOptions.get( prodDetail.getActiveVariation().getImage().getSrc() );
-		//ArrayList<Variation> = prodDetail.getVariations();
 
 		if( options == null || options.size() == 0 || options.get(0).equals("") ){
 			Spinner spinner = (Spinner) findViewById( R.id.options_spinner );

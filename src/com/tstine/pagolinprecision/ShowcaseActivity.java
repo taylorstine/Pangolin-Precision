@@ -111,7 +111,6 @@ public class ShowcaseActivity extends Activity {
 					e.printStackTrace();
 				}
 
-				//ImageLoader.loadImages( uriArr.toArray( new URI[uriArr.size()]) );
 				grid.setAdapter( new GridableImageAdapter( this, gridItems, imgMap ) );
 				grid.setOnItemClickListener( new AdapterView.OnItemClickListener() {
 						@Override

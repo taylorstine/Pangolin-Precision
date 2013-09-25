@@ -56,7 +56,6 @@ public class HttpGetter{
 			BasicHttpResponse response = (BasicHttpResponse) mClient.execute( post );
 			BasicManagedEntity ent = (BasicManagedEntity)response.getEntity();
 			String responseText = EntityUtils.toString( ent );
-			Log.d( Const.APP_TAG, "Cart put response:\n" + responseText );
 		}catch( ClientProtocolException e){
 			e.printStackTrace();
 		}catch( IOException e ){
