@@ -14,19 +14,27 @@ import android.view.LayoutInflater;
 
 import android.graphics.Paint;
 import android.graphics.Color;
+import android.graphics.Bitmap;
 
 import android.util.Log;
+
+import java.util.HashMap;
+
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class ImgAdapter extends BaseAdapter{
+public class GridableImageAdapter extends BaseAdapter{
 	private Context mCtx;
 	private ArrayList<Gridable> mGridItems;
-
-	public ImgAdapter( Context ctx, ArrayList<? extends Gridable> gridItems ){
+	private HashMap<String,Bitmap> mImgMap;
+	
+	public GridableImageAdapter( Context ctx,
+															 ArrayList<? extends Gridable> gridItems,
+															 HashMap<String,Bitmap> imageMap ){
 		mCtx = ctx;
 		mGridItems = (ArrayList<Gridable>)gridItems;
+		mImgMap = imageMap;
 	}
 
 	@Override
@@ -37,41 +45,59 @@ public class ImgAdapter extends BaseAdapter{
 		Gridable gridItem = mGridItems.get(position);
 		
 		if( gridItem.getLayout().equals( Const.CATEGORY_GRID_LAYOUT ) ){
-			return setupCategoryGridItem( inflater, gridItem );
-		}else{
-			return setupProductGridItem( inflater, gridItem );
+			return setupCategoryGridItem( gridItem, getViewLayout( Const.CATEGORY_GRID_LAYOUT, inflater ));
+		}else if (gridItem.getLayout().equals( Const.PRODUCT_GRID_LAYOUT) ){
+			return setupProductGridItem( gridItem,getViewLayout( Const.PRODUCT_GRID_LAYOUT, inflater) );
 		}
+		else
+			return null;
+	}
+
+	public View getViewLayout( String layout, LayoutInflater inflater ){
+		int resId = mCtx.getResources().getIdentifier( layout,
+																									"layout",
+																									mCtx.getPackageName() );
+		return inflater.inflate( resId, null );
 	}
 	
-	public View setupCategoryGridItem( LayoutInflater inflater, Gridable gridItem ){
-		View gridItemView;
-		int resId = mCtx.getResources().getIdentifier( Const.CATEGORY_GRID_LAYOUT, "layout",
-																									 mCtx.getPackageName() );
-		gridItemView = inflater.inflate( resId, null );
+	public View setupSwatchGridItem( Gridable gridItem, View gridItemView ){
+		ImageView img = (ImageView) gridItemView.findViewById( R.id.item_image );
+		//		try{
+			//img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
+		//		}catch( URISyntaxException e ){
+		//e.printStackTrace();
+		//}
+		img.setImageBitmap( mImgMap.get( gridItem.getImage().getSrc() ) );
+		return gridItemView;
+
+	}
+	
+	public View setupCategoryGridItem( Gridable gridItem, View gridItemView ){
 		TextView infoTV = (TextView) gridItemView.findViewById( R.id.item_text );
 		infoTV.setText( gridItem.getCaption() );
 		ImageView img = (ImageView) gridItemView.findViewById( R.id.item_image );
-		try{
+		/*try{
 			img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
 		}catch( URISyntaxException e ){
 			e.printStackTrace();
-		}
+			}*/
+		img.setImageBitmap( mImgMap.get( gridItem.getImage().getSrc() ) );
+ 		Log.d(Const.APP_TAG, "src: "+ gridItem.getImage().getSrc() );
 		return gridItemView;
 	}
 	
-	public View setupProductGridItem( LayoutInflater inflater, Gridable gridItem ){
-		View gridItemView;
-		int resId = mCtx.getResources().getIdentifier( Const.PRODUCT_GRID_LAYOUT, "layout",
-																									 mCtx.getPackageName() );
-		gridItemView = inflater.inflate( resId, null );
+	public View setupProductGridItem( Gridable gridItem, View gridItemView ){
+		
 		TextView titleTV = (TextView) gridItemView.findViewById( R.id.item_title );
 		titleTV.setText( gridItem.getValue("title") );
 		ImageView img = (ImageView) gridItemView.findViewById( R.id.item_image );
-		try{
+		/*try{
 			img.setImageBitmap( ImageLoader.loadImage( new URI( gridItem.getImage().getSrc() ) ));
 		}catch( URISyntaxException e ){
 			e.printStackTrace();
-		}
+			}*/
+		img.setImageBitmap( mImgMap.get( gridItem.getImage().getSrc() ) );
+
 
 		TextView retailTV = (TextView) gridItemView.findViewById( R.id.item_retail_price );
 		retailTV.setText( gridItem.getValue("retail") );

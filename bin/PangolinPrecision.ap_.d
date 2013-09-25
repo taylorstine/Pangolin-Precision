@@ -1,11 +1,16 @@
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/bin/PangolinPrecision.ap_ \
  : /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/drawable-mdpi/ic_launcher.png \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/subcat.xml \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/sorry.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/category_grid_item.xml \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/spinner_item.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/grid_view.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/grid_item.xml \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/loading.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/product_details.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/main.xml \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/swatch_grid_item.xml \
+/home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/basic_grid_item.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/list_view.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/product_grid_item.xml \
 /home/taylor/Dropbox/Programming/Andriod/PangolinPrecision/res/layout/main_categories.xml \

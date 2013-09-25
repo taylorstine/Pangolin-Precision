@@ -14,34 +14,52 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int add_to_cart_button=0x7f050007;
-        public static final int category_list=0x7f050004;
+        public static final int add_to_cart_button=0x7f05000b;
+        public static final int category_list=0x7f050005;
+        public static final int cross_sale_label=0x7f050011;
+        public static final int cross_sales=0x7f050012;
         public static final int grid=0x7f050002;
-        public static final int item_currency=0x7f05000d;
+        public static final int item_currency=0x7f050009;
         public static final int item_image=0x7f050000;
-        public static final int item_retail_price=0x7f05000b;
-        public static final int item_sale_price=0x7f05000c;
+        public static final int item_retail_price=0x7f050007;
+        public static final int item_sale_price=0x7f050008;
         public static final int item_text=0x7f050001;
-        public static final int item_title=0x7f05000a;
+        public static final int item_title=0x7f050015;
         public static final int list=0x7f050003;
-        public static final int main_image=0x7f050006;
-        public static final int product_bullets=0x7f050009;
-        public static final int product_leading_equity=0x7f050008;
-        public static final int product_title=0x7f050005;
+        public static final int list_text=0x7f050016;
+        public static final int main_image=0x7f05000a;
+        public static final int options_spinner=0x7f05000c;
+        public static final int product_bullets=0x7f05000f;
+        public static final int product_leading_equity=0x7f05000e;
+        public static final int product_title=0x7f050006;
+        public static final int progress_bar=0x7f050004;
+        public static final int promos=0x7f050010;
+        public static final int swatch_grid=0x7f05000d;
+        public static final int up_sale_label=0x7f050013;
+        public static final int up_sales=0x7f050014;
     }
     public static final class layout {
-        public static final int category_grid_item=0x7f030000;
-        public static final int grid_item=0x7f030001;
-        public static final int grid_view=0x7f030002;
-        public static final int list_view=0x7f030003;
-        public static final int main=0x7f030004;
-        public static final int main_categories=0x7f030005;
-        public static final int product_details=0x7f030006;
-        public static final int product_grid_item=0x7f030007;
-        public static final int subcat=0x7f030008;
+        public static final int basic_grid_item=0x7f030000;
+        public static final int category_grid_item=0x7f030001;
+        public static final int grid_item=0x7f030002;
+        public static final int grid_view=0x7f030003;
+        public static final int list_view=0x7f030004;
+        public static final int loading=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int main_categories=0x7f030007;
+        public static final int product_details=0x7f030008;
+        public static final int product_grid_item=0x7f030009;
+        public static final int sorry=0x7f03000a;
+        public static final int spinner_item=0x7f03000b;
+        public static final int subcat=0x7f03000c;
+        public static final int swatch_grid_item=0x7f03000d;
     }
     public static final class string {
         public static final int addToCartButton=0x7f040001;
         public static final int app_name=0x7f040000;
+        public static final int cross_sale_text=0x7f040004;
+        public static final int options_spinner_hint=0x7f040002;
+        public static final int sorry_text=0x7f040003;
+        public static final int up_sale_text=0x7f040005;
     }
 }

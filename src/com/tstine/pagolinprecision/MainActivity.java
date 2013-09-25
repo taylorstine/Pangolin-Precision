@@ -27,6 +27,7 @@ public class MainActivity extends Activity
 			Intent intent = new Intent( this, ShowcaseActivity.class );
 			intent.setData( Uri.parse( Const.HOST ) );
 			startActivity( intent );
+			finish();
 		}
 		else{
 			Toast toast = Toast.makeText( this, "Sorry, no internet connection", Toast.LENGTH_SHORT );

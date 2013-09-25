@@ -16,12 +16,12 @@ public class Gridable{
 	public Image getImage(){return mImg;}
 	public String getCaption(){
 		if(mInfo == null )
-			return "no caption";
+			return "";
 		return mInfo.get("title");
 	}
 	public String getValue( String key ){
 		if( !hasValue(key) )
-			return "No item";
+			return null;
 		return mInfo.get(key);
 	}
 	

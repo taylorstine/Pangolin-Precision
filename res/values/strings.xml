@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">PangolinPrecision</string>
     <string name="addToCartButton">Add to Cart</string>
+    <string name="options_spinner_hint">Select an options</string>
+    <string name="sorry_text">Oh dear Gremlins! In the JSON parsing code! So embarassing...</string>
+    <string name="cross_sale_text">Customers also bought...</string>
+    <string name="up_sale_text">You may also like...</string>
 </resources>

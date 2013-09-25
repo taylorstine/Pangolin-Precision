@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
+import android.util.Log;
+
 import java.lang.StringBuffer;
 
 public class ProductDetail{
@@ -30,12 +32,31 @@ public class ProductDetail{
 		mVariations = variations;
 		mUpsales = upsales;
 		mCrossSales = crossSales;
-		mActiveVariation = variations.get(0);
+		if( variations.size() > 0 )
+			mActiveVariation = variations.get(0);
+		else
+			mActiveVariation = null;
 		mImages = images;
 	}
 
+	public ArrayList<String> getPromos(){
+		return mPromos;
+	}
+
 	public HashMap<String,String> getImage( int idx ){
+		if( idx > mImages.size() )
+			return Const.getDefaultImgMap();
 		return mImages.get(idx);
+	}
+	public HashMap<String,String> getActiveVariationImageMap(int idx){
+		if( mVariations.size() > 0 )
+			return mActiveVariation.getImageMap( idx );
+		else
+			return mImages.get(0);
+	}
+
+	public String getActiveVariationValue( String str ){
+		return mActiveVariation.getValue(str );
 	}
 	public boolean hasValue( String key ){ return mInfo.containsKey(key);}
 	public String getValue( String key ){
@@ -52,8 +73,7 @@ public class ProductDetail{
 			Map.Entry pair = (Map.Entry)it.next();
 			sb.append(pair.getKey() + ": " + pair.getValue() );
 			sb.append("\n");
-			it.remove();
-		}
+			}
 		for( String str : mBullets ){
 			sb.append("bullet " + str);
 			sb.append("\n");
@@ -70,7 +90,6 @@ public class ProductDetail{
 				Map.Entry pair = (Map.Entry) it.next();
 				sb.append( pair.getKey() + ": " + pair.getValue() );
 				sb.append("\n");
-				it.remove();
 			}
 		}
 
@@ -92,9 +111,70 @@ public class ProductDetail{
 			sb.append("\n");
 		}
 
-
-
 		return sb.toString();
 	}
 
+	public ArrayList<Variation> getVariations(){
+		return mVariations;
+	}
+
+	public Variation getVariation(int idx){
+		if( idx >= mVariations.size() )
+			return null;
+		return mVariations.get(idx );
+	}
+
+	public Variation setActiveVariation( int idx ){
+		if( idx >= mVariations.size() )
+			if( mVariations.size() > 0 )
+				mActiveVariation = mVariations.get(0);
+			else
+				return null;
+		mActiveVariation = mVariations.get(idx);
+		return mActiveVariation;
+	}
+
+	public Variation setActiveVariation( Variation var ){
+		if( var!= null )
+			mActiveVariation = var;
+		return mActiveVariation;
+	}
+
+	public Variation getActiveVariation(){
+		return mActiveVariation;
+	}
+
+	public Variation getVariationBySwatch( String swatch ){
+		for( Variation var : mVariations )
+			if( var.getValue("swatch").equals( swatch ))
+				return var;
+		return null;
+	}
+
+	public HashMap<String,ArrayList<String>> getVariationOptions(){
+		HashMap<String,ArrayList<String>> varOptions =
+			new HashMap<String,ArrayList<String>>();
+		for( Variation v : mVariations ){
+			String swatch = v.getValue("swatch");
+			String option = v.getCaption();
+			//Log.d( Const.APP_TAG, "get swatch: " + swatch );
+			//Log.d( Const.APP_TAG, "get Cap: " + option );
+
+			if( varOptions.containsKey( swatch) )
+				varOptions.get( swatch ).add( option );
+			else{
+				ArrayList<String> optArray = new ArrayList<String>();
+				optArray.add( option );
+				varOptions.put( swatch, optArray );
+			}
+		}
+		return varOptions;
+	}
+
+	public ArrayList<Gridable> getCrossSales(){
+		return mCrossSales;
+	}
+	public ArrayList<Gridable> getUpsales(){
+		return mUpsales;
+	}
 }

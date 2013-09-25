@@ -10,5 +10,4 @@
     android:stretchMode="columnWidth"
     android:gravity="center"
     android:padding="8dp"
-    >
-</GridView>
+   />

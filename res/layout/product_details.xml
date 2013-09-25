@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+>
+<RelativeLayout
     android:layout_width = "fill_parent"
     android:layout_height= "fill_parent"
     >
@@ -14,14 +18,46 @@
       android:layout_centerHorizontal= "true"
       android:textStyle="bold"
       />
+      <TextView
+        android:id="@+id/item_retail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/product_title"
+        android:layout_alignParentLeft="true"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="2dp"
+        />
+    <TextView
+        android:id="@+id/item_sale_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/product_title"
+        android:layout_toRightOf="@id/item_retail_price"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text=""
+        android:padding="2dp" 
+        />
+    <TextView
+        android:id="@+id/item_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/product_title"
+        android:layout_toRightOf="@id/item_sale_price"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="2dp" 
+        />
+    
   <ImageView
       android:id="@+id/main_image"
-      android:layout_height="240dp"
-      android:layout_width="240dp"
-      android:layout_centerHorizontal="true"
-      android:layout_below="@id/product_title"
+      android:layout_height="180dp"
+      android:layout_width="180dp"
+      android:layout_alignParentLeft = "true"
+      android:layout_below="@id/item_retail_price"
       />
-  
+
   <Button
       android:id="@+id/add_to_cart_button"
       android:layout_height="wrap_content"
@@ -32,7 +68,33 @@
       android:onClick="addToCartClick"
       android:textSize="12sp"
       />
-  
+
+  <Spinner
+      android:id="@+id/options_spinner"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@id/main_image"
+      android:layout_alignBottom="@id/main_image"
+      android:layout_alignParentRight="true"
+      />
+
+  <GridView
+      android:id="@+id/swatch_grid"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="0dp"
+      android:layout_toRightOf="@id/main_image"
+      android:layout_alignTop="@id/main_image"
+      android:layout_alignParentRight ="true"
+      android:layout_above="@id/options_spinner"
+      android:numColumns="auto_fit"
+      android:verticalSpacing = "2dp"
+      android:horizontalSpacing ="10dp"
+      android:stretchMode="columnWidth"
+      android:columnWidth="20dp"
+      android:gravity="center"
+      />
+
   <TextView
       android:id="@+id/product_leading_equity"
       android:layout_height="wrap_content"
@@ -50,4 +112,62 @@
       android:layout_alignParentLeft="true"
       android:layout_below="@id/product_leading_equity"
       />
+
+  <TextView
+      android:id="@+id/promos"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:textSize="18sp"
+      android:layout_alignParentLeft="true"
+      android:layout_below ="@id/product_bullets"
+      />
+
+  <TextView
+      android:id="@+id/cross_sale_label"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:textSize="18sp"
+      android:layout_alignParentLeft="true"
+      android:layout_below ="@id/promos"
+      android:text="@string/cross_sale_text"
+      />
+  <GridView
+    android:id="@+id/cross_sales"
+    android:layout_alignParentLeft ="true"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/cross_sale_label"
+    android:layout_width="fill_parent"
+    android:layout_height="400dp"
+    android:numColumns="2"
+    android:verticalSpacing="8dp"
+    android:horizontalSpacing="8dp"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+    android:padding="2dp"
+   />
+    <TextView
+      android:id="@+id/up_sale_label"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:textSize="18sp"
+      android:layout_alignParentLeft="true"
+      android:layout_below ="@id/cross_sales"
+      android:text="@string/up_sale_text"
+      />
+  <GridView
+    android:id="@+id/up_sales"
+    android:layout_alignParentLeft ="true"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/up_sale_label"
+    android:layout_width="fill_parent"
+    android:layout_height="400dp"
+    android:numColumns="2"
+    android:verticalSpacing="8dp"
+    android:horizontalSpacing="8dp"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+    android:padding="2dp"
+   />
+
 </RelativeLayout>
+</ScrollView>

@@ -1,6 +1,14 @@
 package com.tstine.pangolinprecision;
 
 import java.lang.RuntimeException;
+import java.lang.InterruptedException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeoutException;
+
+import java.util.concurrent.TimeUnit;
+
+import java.lang.InterruptedException;
 import java.io.IOException;
 
 import org.json.JSONObject;
@@ -24,8 +32,18 @@ import org.apache.http.conn.BasicManagedEntity;
 
 
 public class JSONParser{
-	public static JSONObject parse( URI ... uris ){
-		BasicManagedEntity ent = HttpGetter.get( uris[0] );
+	public static JSONObject parse( URI ... uris){
+		BasicManagedEntity ent = null;
+		try{
+			ent = new HttpGetTask().execute( uris[0] ).get();
+		}catch( InterruptedException e ){
+			e.printStackTrace();
+		}catch( ExecutionException e ){
+			e.printStackTrace();
+		}catch( CancellationException e ){
+			e.printStackTrace();
+		}
+	
 		String jsonText = "";
 		try{
 			jsonText = EntityUtils.toString( ent );
@@ -34,7 +52,6 @@ public class JSONParser{
 		}catch( IOException e ){
 			e.printStackTrace();
 		}
-		Log.d(Const.APP_TAG, "text length: " + jsonText.length() );
 		JSONObject jsonObj = null;
 		try{
 			jsonObj = new JSONObject( jsonText );
@@ -42,34 +59,145 @@ public class JSONParser{
 			e.printStackTrace();
 		}
 		return jsonObj;
-	}
+		}
 
 	public static ArrayList<Gridable> getGridItems( Uri uri ){
 		ArrayList<Gridable> gridItems = new ArrayList<Gridable>();
 		JSONObject jobj = null;
 		try{
 			jobj = JSONParser.parse( new URI(uri.toString() ));
+			if( jobj == null )
+				return gridItems;
+			//jobj = new JSONParseTask().execute( new URI( uri.toString() ) ).get();
 		}catch( URISyntaxException e ){
 			e.printStackTrace();
-		}
-		try{
-			if( jobj.has("categories") ){
-				JSONArray catArray = (JSONArray) jobj.get( "categories" );
-				for( int i = 0; i < catArray.length(); i++ ){
-					gridItems.add( getCategoryGridItem( (JSONObject) catArray.get(i)) );
-				}
-			}
-			if( jobj.has("products" ) ){
-				JSONArray prodArray = (JSONArray) jobj.get("products");
-				for( int i = 0; i < prodArray.length(); i++ ) {
-					gridItems.add( getProductGridItem( (JSONObject) prodArray.get(i) ) );
-				}
-			}
-		}catch( JSONException e ){
+		}/*catch( InterruptedException e ){
 			e.printStackTrace();
+		}catch( ExecutionException e ){
+			e.printStackTrace();
+		}catch( CancellationException e ){
+			e.printStackTrace();
+		}/*catch( TimeoutException e ){
+			e.printStackTrace();
+			}*/
+
+		if( jobj.has("categories") ){
+			JSONArray catArray = null;
+			try{
+				catArray = (JSONArray) jobj.get( "categories" );
+			}	catch( JSONException e ){
+				e.printStackTrace();
+			}
+			for( int i = 0; i < catArray.length(); i++ ){
+					//try{
+						//gridItems.add( new GetCategoryGridItemsTask().execute( (JSONObject) catArray.get(i)).get());
+				if( catArray.optJSONObject(i) != null )
+					gridItems.add( getCategoryGridItem(catArray.optJSONObject(i)));
+
+
+													 /*}catch( InterruptedException e ){
+						e.printStackTrace();
+					}catch( ExecutionException e ){
+						e.printStackTrace();
+					}catch( CancellationException e ){
+						e.printStackTrace();
+						}*/
+						//}
+				}
+		}
+
+		if( jobj.has("products" ) ){
+			JSONArray prodArray = null;
+			try{
+				prodArray = (JSONArray) jobj.get("products");
+			}catch( JSONException e ){
+				e.printStackTrace();
+			}
+			for( int i = 0; i < prodArray.length(); i++ ) {
+				if( prodArray.optJSONObject(i) != null )
+					gridItems.add( getProductGridItem( (JSONObject) prodArray.optJSONObject(i)));
+			}
+
+			/*
+				try{
+						
+				gridItems.add(
+				new GetProductGridItemsTask()
+				.execute( (JSONObject) prodArray.get(i) ).get() );
+				}catch( InterruptedException e ){
+				e.printStackTrace();
+				}catch( ExecutionException e ){
+				e.printStackTrace();
+				}catch( CancellationException e ){
+				e.printStackTrace();
+				}*/
 		}
 		return gridItems;
 	}
+
+	/*	private class GetProductGridItemsTask extends AsyncTask< JSONObject, Void, Gridable > {
+		protected  Gridable doInBackground( JSONObject jobj){
+			Image img = null;
+			HashMap<String,String> infoMap = getKeyValues(jobj);
+			HashMap<String,String> priceMap = new HashMap<String,String>();
+			String src= "http://placehold.it/100/c11b17/ffffff&text=thumb";
+			String alt= "Image text";
+			try{
+				if( jobj.has("price" ) ){
+					priceMap = getKeyValues( jobj.getJSONObject("price") );
+				}
+				if(!priceMap.containsKey("currency" ) )
+					priceMap.put("currency","USD");
+
+				if( jobj.has("image" ) ){
+					JSONObject imgObj = jobj.getJSONObject("image");
+					if( imgObj.has("thumbs") ){
+						HashMap<String, String> imgSrc = getKeyValues( imgObj.getJSONObject("thumbs") );
+						if( imgSrc.containsKey("small") ){
+							src = imgSrc.get("small");
+						}
+						else if( imgSrc.containsKey("large") ){
+							src = imgSrc.get("large");
+						}
+					}
+				}
+			}catch( JSONException e){
+				e.printStackTrace();
+			}
+			img = new Image( src, alt );
+			infoMap.putAll(priceMap);
+			return new Gridable( img, infoMap, Const.PRODUCT_GRID_LAYOUT );
+		}
+		}*/
+
+	/*	private class GetCategoryGridItemsTask extends AsyncTask< JSONObject, Void, Gridable>{
+		protected Gridable doInBackground( JSONObject jobj ){
+			Image img = null;
+			HashMap<String, String> infoMap = new HashMap<String,String>();
+
+			infoMap.putAll(getKeyValues( jobj ));
+			try{
+				if( jobj.has("_bb_image" ) ){
+					JSONObject imgJson = (JSONObject) jobj.get("_bb_image");
+					String src = "http://placehold.it/150/c11b17/ffffff&text=category";
+					String alt = "Image text";
+					if( imgJson.has("src" ) )
+						src = imgJson.getString("src");
+					if( imgJson.has("alt") )
+						alt = imgJson.getString("alt");
+					img = new Image( src, alt );
+				}
+				else if( jobj.has("image") ){
+					img = new Image( jobj.getString("image") );
+				}
+			}catch( JSONException e ){
+				e.printStackTrace();
+			}
+
+			return new Gridable( img, infoMap, Const.CATEGORY_GRID_LAYOUT );
+		}
+		}*/
+
 
 	public static Gridable getProductGridItem( JSONObject jobj){
 		Image img = null;
@@ -94,6 +222,12 @@ public class JSONParser{
 					else if( imgSrc.containsKey("large") ){
 						src = imgSrc.get("large");
 					}
+				}
+			}else if (jobj.has("images") ){
+				JSONArray imgArray = jobj.optJSONArray("images");
+				JSONObject imgsObj = imgArray.optJSONObject(0);
+				if( imgsObj!=null && imgsObj.has("thumb") ){
+					src = imgsObj.getString("thumb");
 				}
 			}
 		}catch( JSONException e){
@@ -130,6 +264,7 @@ public class JSONParser{
 		return new Gridable( img, infoMap, Const.CATEGORY_GRID_LAYOUT );
 	}
 
+
 	public static ProductDetail getProductDetail( Uri uri ){
 		JSONObject jobj = null;
 		HashMap<String,String> info = new HashMap<String,String>();
@@ -143,7 +278,14 @@ public class JSONParser{
 			jobj = JSONParser.parse( new URI( uri.toString() ) );
 		}catch( URISyntaxException e ){
 			e.printStackTrace();
-		}
+		}/*catch( InterruptedException e ){
+			e.printStackTrace();
+		}catch( ExecutionException e ){
+			e.printStackTrace();
+		}catch( CancellationException e ){
+			e.printStackTrace();
+			}*/
+		
 		try{
 			
 			info.putAll( getKeyValues( jobj ) );
@@ -184,7 +326,7 @@ public class JSONParser{
 			JSONArray upsaleArray = jobj.optJSONArray( "up_sales" );
 			if( upsaleArray != null ){
 				for( int i = 0; i < upsaleArray.length(); i++ ){
-					upsales.add( getProductGridItem( upsaleArray.optJSONObject(i) ) );
+					upsales.add( getProductGridItem( upsaleArray.optJSONObject(i ) ) );
 				}
 			}
 			
@@ -195,11 +337,10 @@ public class JSONParser{
 				}
 			}
 
+
 			if( jobj.has("images") && jobj.optJSONArray("images") != null ){
 				imageList = getImageList( jobj.optJSONArray("images") );
 			}
-
-										
 		}catch( JSONException e ){
 			e.printStackTrace();
 		}
@@ -216,8 +357,9 @@ public class JSONParser{
 		
 		if( varObj.has("identifiers") && varObj.optJSONObject("identifiers")!= null )
 			info.putAll( getKeyValues( varObj.optJSONObject("identifiers") ) );
-		if( varObj.has("price" ) && varObj.optJSONObject("price") != null)
+		if( varObj.has("price" ) && varObj.optJSONObject("price") != null){
 			info.putAll( getKeyValues(varObj.optJSONObject("price") ) );
+		}
 		if( varObj.has("images") && varObj.optJSONArray("images") != null )
 			imageList = getImageList( varObj.optJSONArray("images") );
 		if( varObj.has("options" ) && varObj.optJSONObject("options") != null)

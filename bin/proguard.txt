@@ -7,6 +7,9 @@
 # view AndroidManifest.xml #generated:23
 -keep class com.tstine.pangolinprecision.ShowcaseActivity { <init>(...); }
 
-# onClick res/layout/product_details.xml #generated:25
+# view AndroidManifest.xml #generated:27
+-keep class com.tstine.pangolinprecision.SorryActivity { <init>(...); }
+
+# onClick res/layout/product_details.xml #generated:61
 -keepclassmembers class * { *** addToCartClick(...); }
 

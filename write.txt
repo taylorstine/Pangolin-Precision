@@ -1,0 +1,15 @@
+I could not get the add to cart feature to work.  Mostly I am unsure of what needs to be in the HTTP post request.  I'm a little confused by the API listing.  If you would like to give me a hint, I can iterate and retry the post request.  My post requests were able to get a response from the server, but I couldn't get anything into the cart
+
+In addition to this issue, below are some of the overall issues I have with the app, just for reference on what I could do better if given more time:
+1. The UI is a little boring - Something that in the requirements wasn't a priority, but I still think it should be nicer
+2. Sometimes the app gets sleepy - the ui will go black sometimes when its trying to parse JSON code.  This is something I could fix with more efficient code. Which brings me to..
+3. The code could be more efficient - I tried to move as fast as possible when developing, so that kind of resulted in a "move fast and break things" style of coding.  Some pieces could be made much more efficient if I had more time to plan ahead.
+4. The loading bar implementation is hacky - I couldn't quite get this right, so instead of showing a loading bar during a async task like I planned, I hacked together a solution with a static member variable
+5.  Too much redundancy in data - I'm not happy with the amount of redundancy in my storage of the data, I think it's too much and it slows my code down.  This again results from trying to move fast and not having much time for planning.
+6. Too much redundancy in code - I tried to make use of as much code reuse as possible, but on occasion, I took the easy way out and copy/pasted when I could have come up with a more elegant solution.  Again, given more time this is something I would fix.
+7. Navigation - the navigation is primarily by popping the activity stack, there should be other ways to navigate
+8. Action Bar - Navigation buttons, better looking, better titles etc.
+9. There are probably crashes - All of the crashes and bugs that I have found I have fixed, but I am sure there are some that I did not test.  In those scenarios I have attempted to have the app fail gracefully, but sometimes that will not be the case and the app will just die.
+  
+
+
